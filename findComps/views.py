@@ -47,6 +47,7 @@ def compsearch(request):
 				response = HttpResponse(fh.read(), content_type="application/vnd.ms-excel")
 				response['Content-Disposition'] = 'inline; filename=' + "Competitive Market2.xlsx"
 				return response
+		return render(request, 'comps/findSNFS.html')
 
 	return render(request, 'comps/compResults.html', {'facility_information': facility_information})
 
